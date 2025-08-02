@@ -182,7 +182,7 @@ async function 整理测速结果(tls) {
 				.map(row => {
 					const ipAddress = row[0];
 					const port = row[1];
-					const dataCenter = row[tlsIndex + remarkIndex];
+					const dataCenter = row[tlsIndex + remarkIndex] + row[-1];
 					const formattedAddress = `${ipAddress}:${port}#${dataCenter}`;
 
 					// 处理代理IP池
@@ -1469,4 +1469,5 @@ async function subHtml(request) {
 			"content-type": "text/html;charset=UTF-8",
 		},
 	});
+
 }
